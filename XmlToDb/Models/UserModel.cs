@@ -12,4 +12,4 @@ namespace XmlToDb.Models
         public string User_fio { get; set; }
         public string? User_email { get; set; }
     }
-}
+} 
