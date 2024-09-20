@@ -7,10 +7,9 @@ namespace XmlToDb
 {
     public class Program
     {
-        private static DbOperations dbOperations;
         static void Main()
         {
-            dbOperations = new DbOperations();
+            DbOperations dbOperations = new DbOperations();
             dbOperations.Initialize();
             Console.WriteLine("Write file path");
             string path = Console.ReadLine();
@@ -26,7 +25,9 @@ namespace XmlToDb
 
         private static List<OrderModel> XmlParce(string path)
         {
-            XDocument xDocument = XDocument.Load(path);
+            XDocument xDocument = new XDocument();
+            if (File.Exists(path))
+                xDocument = XDocument.Load(path);
             var ordersModel = new List<OrderModel>();
 
             List<OrderModel>? orders = xDocument.Element("orders")?.Elements("order").Select(o => new OrderModel
