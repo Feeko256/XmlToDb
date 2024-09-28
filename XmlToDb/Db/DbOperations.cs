@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XmlToDb.Interfaces;
 using XmlToDb.Models;
 
-namespace XmlToDb
+namespace XmlToDb.Db
 {
-    public class DbOperations
+    public class DbOperations : IDbOperations
     {
         public void Initialize()
         {

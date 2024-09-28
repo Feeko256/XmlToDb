@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using XmlToDb.Models;
 
-namespace XmlToDb
+namespace XmlToDb.Db
 {
     public class ApplicationContext : DbContext
     {
