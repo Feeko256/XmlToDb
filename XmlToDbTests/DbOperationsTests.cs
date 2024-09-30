@@ -11,25 +11,21 @@ namespace XmlToDbTests
 {
     public class DbOperationsTests
     {
-        private readonly DbContextOptions<ApplicationContext> _options;
+        private readonly DbContextOptions<TestApplicationContext> _options;
         private readonly DbOperations _dbOperations;
 
         public DbOperationsTests()
         {
             _dbOperations = new DbOperations();
-            DbContextOptionsBuilder optionsBuilder = new DbContextOptionsBuilder();
-            optionsBuilder.UseSqlite("Data Source=orders.db");
-
-            using (var db = new ApplicationContext())
-            {
-                db.Database.EnsureCreated();
-            }
+            _options = new DbContextOptionsBuilder<TestApplicationContext>()
+            .UseInMemoryDatabase(databaseName: "TestDb")
+            .Options;
         }
         [Fact]
         public void Create_CanDbBeCreated()
         {
             _dbOperations.Create();
-            using (var db = new ApplicationContext())
+            using (var db = new TestApplicationContext(_options))
             {
                 Assert.True(db.Database.CanConnect());
             }

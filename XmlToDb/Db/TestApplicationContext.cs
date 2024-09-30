@@ -4,19 +4,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XmlToDb.Db;
 using XmlToDb.Models;
 
 namespace XmlToDb.Db
 {
-    public class ApplicationContext : DbContext
+    public class TestApplicationContext : DbContext
     {
+        public TestApplicationContext(DbContextOptions<TestApplicationContext> options) : base(options) { }
 
         public DbSet<OrderModel> Orders { get; set; } = null;
         public DbSet<ProductModel> Products { get; set; } = null;
         public DbSet<UserModel> Users { get; set; } = null;
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=orders.db");
-        }
+
     }
 }
