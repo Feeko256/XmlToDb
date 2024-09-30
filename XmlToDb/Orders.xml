@@ -19,11 +19,6 @@
 			<product_name>Dyson V8</product_name>
 			<price>32098.13</price>
 		</product>
-		<product>
-			<quantity>3</quantity>
-			<product_name>smartptone</product_name>
-			<price>32098.13</price>
-		</product>
 		<user>
 			<user_fio>Иванов Стас Иванович</user_fio>
 			<user_email>abc@email.com</user_email>

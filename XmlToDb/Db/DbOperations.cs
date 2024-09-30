@@ -127,6 +127,7 @@ namespace XmlToDb.Db
                         db.Orders.Add(order);
                     }
                 }
+                //remove order
                 var ordersToRemove = db.Orders
                        .Include(o => o.Products)
                        .Include(o => o.User)

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlToDb", "XmlToDb\XmlToDb.csproj", "{A321273B-4F8A-4217-8071-DAF07C355FBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XmlToDb", "XmlToDb\XmlToDb.csproj", "{A321273B-4F8A-4217-8071-DAF07C355FBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlToDbTests", "XmlToDbTests\XmlToDbTests.csproj", "{26F6207F-1A21-40B3-97D7-704B87F2DA15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A321273B-4F8A-4217-8071-DAF07C355FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A321273B-4F8A-4217-8071-DAF07C355FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A321273B-4F8A-4217-8071-DAF07C355FBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26F6207F-1A21-40B3-97D7-704B87F2DA15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26F6207F-1A21-40B3-97D7-704B87F2DA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26F6207F-1A21-40B3-97D7-704B87F2DA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26F6207F-1A21-40B3-97D7-704B87F2DA15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

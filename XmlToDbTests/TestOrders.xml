@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<orders>
+	<order>
+		<order_number>1</order_number>
+		<reg_date>2023.11.13</reg_date>
+		<sum>12056.46</sum>
+		<product>
+			<quantity>2</quantity>
+			<product_name>LG 1755</product_name>
+			<price>12056.46</price>
+		</product>
+		<user>
+			<user_fio>Иванов Иван Иванович</user_fio>
+			<user_email>abc@email.com</user_email>
+		</user>
+	</order>
+	<order>
+		<order_number>2</order_number>
+		<reg_date>2022.10.14</reg_date>
+		<sum>45780.48</sum>
+		<product>
+			<quantity>5</quantity>
+			<product_name>Sony</product_name>
+			<price>40567.24</price>
+		</product>
+		<product>
+			<quantity>2</quantity>
+			<product_name>Gamepad</product_name>
+			<price>5213.24</price>
+		</product>
+		<user>
+			<user_fio>Петров Петр Петрович</user_fio>
+			<user_email>dce@email.com</user_email>
+		</user>
+	</order>
+</orders>

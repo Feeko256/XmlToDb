@@ -10,7 +10,7 @@ using XmlToDb.Models;
 
 namespace XmlToDb.Files
 {
-    internal class XmlParser : IXmlParser
+    public class XmlParser : IXmlParser
     {
         public List<OrderModel> Parse(string path)
         {
