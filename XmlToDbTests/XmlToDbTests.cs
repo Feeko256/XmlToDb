@@ -85,7 +85,6 @@ namespace XmlToDbTests
                 }
                 Assert.Equal(_expectedOrders[i].User.User_fio, result[i].User.User_fio);
                 Assert.Equal(_expectedOrders[i].User.User_email, result[i].User.User_email);
-
             }
         }
     }
