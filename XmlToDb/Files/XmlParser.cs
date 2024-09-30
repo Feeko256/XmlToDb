@@ -50,7 +50,7 @@ namespace XmlToDb.Files
             {
                 User_fio = u.Element("user_fio")?.Value,
                 User_email = u.Element("user_email")?.Value,
-            }).FirstOrDefault() ?? new UserModel();
+            }).FirstOrDefault() ?? new UserModel() { User_fio = "FIO", User_email = "EMAIL"};
         }
     }
 }

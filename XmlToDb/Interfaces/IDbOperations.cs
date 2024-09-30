@@ -9,7 +9,10 @@ namespace XmlToDb.Interfaces
 {
     public interface IDbOperations
     {
-        void Initialize();
-        void Insert(List<OrderModel> orders);
+        void Create();
+        void InsertOrUpdate(List<OrderModel> data);
+        List<OrderModel> Return();
+        void Delete();
+        void Clear();
     }
 }

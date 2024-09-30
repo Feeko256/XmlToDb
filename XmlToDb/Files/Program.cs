@@ -29,17 +29,20 @@ namespace XmlToDb.Files
         }
         public void Start()
         {
-            _dbOperations.Initialize();
+            //_dbOperations.Delete();
+            _dbOperations.Create();
+            //_dbOperations.Clear();
+            
+
             Console.WriteLine("Write file path");
-            string path = Console.ReadLine();
-            List<OrderModel> orders = new List<OrderModel>();
+            var path = Console.ReadLine();
+            var orders = new List<OrderModel>();
             if (path is not null)
                 orders = _xmlParser.Parse(path);
             if (orders is not null)
-            {
-                _dbOperations.Insert(orders);
-                _Print.PrintToConsol(orders);
-            }
+                _dbOperations.InsertOrUpdate(orders);
+
+            _Print.PrintToConsol(_dbOperations.Return());
         }
     }
 }

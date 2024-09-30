@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XmlToDb.Interfaces;
+using XmlToDb.Models;
 
 namespace XmlToDb.Files
 {
     public class Print : IPrint
     {
-        public void PrintToConsol(dynamic orders)
+        public void PrintToConsol(List<OrderModel> orders)
         {
             if (orders is not null)
             {
