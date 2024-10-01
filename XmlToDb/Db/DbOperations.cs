@@ -39,10 +39,8 @@ namespace XmlToDb.Db
                 catch
                 {
                     /*
-                     Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException:
-                    "The database operation was expected to affect 1 row(s),
-                    but actually affected 0 row(s); data may have been modified 
-                    or deleted since entities were loaded."
+                    Attempted to update or delete 
+                    an entity that does not exist in the store.
                      */
                 }
             }
