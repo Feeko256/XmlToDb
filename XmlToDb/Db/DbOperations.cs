@@ -11,16 +11,21 @@ namespace XmlToDb.Db
 {
     public class DbOperations : IDbOperations
     {
+        private readonly DbContextOptions<ApplicationContext> _options;
+        public DbOperations(DbContextOptions<ApplicationContext> options)
+        {
+            _options = options;
+        }
         public void Create()
         {
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {
                 db.Database.EnsureCreated();
             }
         }
         private void RemoveOrder(dynamic order)
         {
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {
                 try
                 {
@@ -29,7 +34,7 @@ namespace XmlToDb.Db
                         db.Orders.RemoveRange(order);
                         db.SaveChanges();
                     }
-                  
+
                 }
                 catch
                 {
@@ -44,7 +49,7 @@ namespace XmlToDb.Db
         }
         private void RemoveUser(dynamic user)
         {
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {
                 if(user is not null)
                 {
@@ -55,7 +60,7 @@ namespace XmlToDb.Db
         }
         private void RemoveProduct(dynamic product)
         {
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {
                 if(product is not null)
                 {
@@ -66,7 +71,7 @@ namespace XmlToDb.Db
         }
         public void Clear()
         {
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {
                 RemoveProduct(db.Products.ToList());
                 RemoveUser(db.Users.ToList());
@@ -75,14 +80,14 @@ namespace XmlToDb.Db
         }
         public void Delete()
         {
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {
                 db.Database.EnsureDeleted();
             }
         }
         public void InsertOrUpdate(List<OrderModel> orders)
         {
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {         
                 foreach (var order in orders)
                 {
@@ -151,7 +156,7 @@ namespace XmlToDb.Db
         public List<OrderModel> Return()
         {
             var orders = new List<OrderModel>();
-            using (var db = new ApplicationContext())
+            using (var db = new ApplicationContext(_options))
             {
                 if(db.Database.CanConnect())
                     orders = db.Orders.Include(o => o.User).Include(p => p.Products).ToList();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,6 @@ namespace XmlToDb.Models
         public DateOnly Reg_date { get; set; }
         public List<ProductModel> Products { get; set; }
         public UserModel User { get; set; }
+
     }
 }

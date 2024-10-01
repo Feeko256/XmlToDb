@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Globalization;
 using System.Xml.Linq;
 using XmlToDb.Db;
@@ -20,7 +21,12 @@ namespace XmlToDb.Files
         }
         static void Main()
         {
-            var dbOperations = new DbOperations();
+            DbContextOptions<ApplicationContext> _options =
+             new DbContextOptionsBuilder<ApplicationContext>()
+            .UseSqlite("Data Source=orders.db")
+            .Options;
+
+            var dbOperations = new DbOperations(_options);
             var xmlParser = new XmlParser();
             var print = new Print();
             var program = new Program(dbOperations, xmlParser, print);

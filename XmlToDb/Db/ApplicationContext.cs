@@ -10,13 +10,18 @@ namespace XmlToDb.Db
 {
     public class ApplicationContext : DbContext
     {
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
 
         public DbSet<OrderModel> Orders { get; set; } = null;
         public DbSet<ProductModel> Products { get; set; } = null;
         public DbSet<UserModel> Users { get; set; } = null;
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=orders.db");
+            modelBuilder.Entity<OrderModel>()
+                .HasMany(o => o.Products)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
